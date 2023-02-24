@@ -1,4 +1,4 @@
-require './turn'
+require './lib/turn'
 
 dealer_deck = Deck.new([
   Card.new(:heart, '2', 2),
