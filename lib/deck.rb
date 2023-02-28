@@ -1,4 +1,5 @@
 require './lib/card'
+require 'pry'
 
 
 class Deck
