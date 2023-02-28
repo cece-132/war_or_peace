@@ -130,9 +130,10 @@ RSpec.describe Turn do
     player2 = Player.new("Aurora", deck2)
 
     turn = Turn.new(player1, player2)
-#binding.pry
+
     expect(player1.deck.cards.length).to eq(4)
     expect(player2.deck.cards.length).to eq(4)
+    
     turn.player1
     turn.player2
     turn.spoils_of_war

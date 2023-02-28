@@ -10,7 +10,7 @@ attr_reader :name, :deck
   end
 
   def has_lost?
-  #  binding.pry
+  #  
     if deck.cards.count == 0
       true
     else

@@ -1,6 +1,6 @@
 require 'rspec'
 require './lib/deck'
-#require 'pry'; binding.pry
+#require 'pry'; 
 
 RSpec.describe Deck do
   it "exists" do
