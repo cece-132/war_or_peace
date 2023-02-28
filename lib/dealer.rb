@@ -1,3 +1,4 @@
+require 'pry'
 require './lib/turn'
 
 class Dealer
@@ -59,4 +60,15 @@ class Dealer
       Card.new(:clubs, 'Ace', 14)
     ])
   end
+
+  def shuffle
+    @deck.cards.each_with_index do |value, index|
+      pos = Random.new.rand(0..51)
+      x = @deck.cards[index]
+      y = @deck.cards[pos]
+      @deck.cards[pos] = x
+      @deck.cards[index] = y
+    end
+  end
+  
 end
