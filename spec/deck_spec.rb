@@ -22,6 +22,14 @@ RSpec.describe Deck do
       expect(@deck.cards).to be_a Array
       expect(@deck.cards.length).to eq(3)
     end
+
+    describe 'relationships' do
+      it 'has relationship to Card' do
+        @deck.cards each do |card|
+          expect(card).to be_a Card
+        end
+      end
+    end
   end
 
   describe '#rank_of_card_at(index)' do
