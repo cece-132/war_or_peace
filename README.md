@@ -8,6 +8,8 @@ This is the starter repo for the BE Mod1 **War or Peace** project at Turing Scho
 
 ### Install and Run Project
   Built with: ruby 2.7.2
+  RUN: `gem install rspec`, to be able to run the test suite using the `rspec spec`
+        to run the entire test suite.
 
 ---
 
@@ -50,7 +52,7 @@ This is the starter repo for the BE Mod1 **War or Peace** project at Turing Scho
 
 ### Testing
   - Coverage (PERCENTAGE)
-  - 
+  - `
 
 ---
 

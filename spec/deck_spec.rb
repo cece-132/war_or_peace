@@ -3,10 +3,12 @@ require './lib/deck'
 #require 'pry'; 
 
 RSpec.describe Deck do
-  it "exists" do
-    deck = Deck.new(@cards)
-  #card = Card.new(:diamond, 'Queen', 12)
-    expect(deck).to be_an_instance_of(Deck)
+
+  describe 'initialize' do
+    it "exists and has attributes" do
+      deck = Deck.new(@cards)
+      expect(deck).to be_an_instance_of(Deck)
+    end
   end
 
   it "has cards" do
