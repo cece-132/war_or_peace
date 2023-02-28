@@ -1,4 +1,6 @@
 require './lib/player'
+require 'pry'
+
 class Turn
   attr_reader :player1, :player2, :spoils_of_war
 
@@ -11,10 +13,8 @@ class Turn
   def type
     if player1.deck.rank_of_card_at(0) != player2.deck.rank_of_card_at(0)
       :basic
-
     elsif player1.deck.rank_of_card_at(0) == player2.deck.rank_of_card_at(0) && player1.deck.rank_of_card_at(2) == player2.deck.rank_of_card_at(2)
       :mutually_assured_destruction
-
     else #player1.deck.rank_of_card_at(0) == player2.deck.rank_of_card_at(0)
       :war
     end
@@ -23,9 +23,9 @@ class Turn
   def winner
     if type == :basic
       if player1.deck.rank_of_card_at(0) > player2.deck.rank_of_card_at(0)
-      player1
+        player1
       elsif player1.deck.rank_of_card_at(0) < player2.deck.rank_of_card_at(0)
-      player2
+        player2
       end
 
     elsif type == :mutually_assured_destruction
@@ -33,6 +33,7 @@ class Turn
 
     else type == :war
       if player1.deck.rank_of_card_at(2) > player2.deck.rank_of_card_at(2)
+        binding.pry
       player1
     elsif player1.deck.rank_of_card_at(2) < player2.deck.rank_of_card_at(2)
       player2
@@ -46,14 +47,14 @@ class Turn
       spoils_of_war << player2.deck.remove_card
     elsif type == :mutually_assured_destruction
       3.times do
-      spoils_of_war << player1.deck.remove_card
-      spoils_of_war << player2.deck.remove_card
+        spoils_of_war << player1.deck.remove_card
+        spoils_of_war << player2.deck.remove_card
       end
       spoils_of_war.clear
     else type == :war
       3.times do
-      spoils_of_war << player1.deck.remove_card
-      spoils_of_war << player2.deck.remove_card
+        spoils_of_war << player1.deck.remove_card
+        spoils_of_war << player2.deck.remove_card
       end
     end
   end
@@ -61,13 +62,12 @@ class Turn
   def award_spoils(winner)
     if winner == player1
       spoils_of_war.each do |card|
-      player1.deck.cards << card
+        player1.deck.cards << card
       end
     else
       spoils_of_war.each do |card|
-      player2.deck.cards << card
+        player2.deck.cards << card
       end
     end
-
   end
 end
