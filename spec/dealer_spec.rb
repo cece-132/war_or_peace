@@ -27,4 +27,27 @@ RSpec.describe Dealer do
       expect(unshuffled_deck).to_not eq @dealer.deck
     end
   end
+
+  describe '#deal(player1, player2)' do
+    it 'deals two players an equal number of cards' do
+      expect(player1.deck.length).to eq 26
+      expect(player2.deck.length).to eq 26
+      expect(player1.deck).to_not eq player2.deck
+    end
+
+    it 'every card in each players deck is a Card' do
+      player1 = Player.new("Megan")
+      player2 = Player.new("Aurora")
+
+      @dealer.deal(player1, player2)
+
+      player1.deck.each do |card|
+        expect(card).to be_a Card
+      end
+
+      player2.deck.each do |card|
+        expect(card).to be_a Card
+      end
+    end
+  end
 end
