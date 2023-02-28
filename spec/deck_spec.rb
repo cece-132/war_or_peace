@@ -47,6 +47,14 @@ RSpec.describe Deck do
     end
   end
 
+  describe '#remove_card' do
+    it 'will remove the top card from the deck' do
+      removed = @deck.remove_card
+      expect(@deck.cards).to eq([@card2, @card3])
+      expect(removed).to eq(@card1)
+    end
+  end
+
   it "does remove_card" do
     card1 = Card.new(:diamond, 'Queen', 12)
     card2 = Card.new(:spade, '3', 3)
