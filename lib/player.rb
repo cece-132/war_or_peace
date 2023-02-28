@@ -16,7 +16,4 @@ attr_reader :name, :deck
     end
   end
 
-  def take_card
-    @deck.cards.shift
-  end
 end
