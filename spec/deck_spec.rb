@@ -41,14 +41,10 @@ RSpec.describe Deck do
     end
   end
 
-  it "has percent_high_ranking" do
-    card1 = Card.new(:diamond, 'Queen', 12)
-    card2 = Card.new(:spade, '3', 3)
-    card3 = Card.new(:heart, 'Ace', 14)
-
-    deck = Deck.new([card1, card2, card3])
-
-    expect(deck.percent_high_ranking).to eq(66.67)
+  describe '#percent_high_ranking' do 
+    it 'return the percentage of cards that are high ranking' do
+      expect(@deck.percent_high_ranking).to eq(66.67)
+    end
   end
 
   it "does remove_card" do
