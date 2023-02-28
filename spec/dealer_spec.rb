@@ -36,6 +36,7 @@ RSpec.describe Dealer do
 
       @dealer.deal(@player1, @player2)
     end
+    
     it 'deals two players an equal number of cards' do
       expect(@player1.deck.length).to eq 26
       expect(@player2.deck.length).to eq 26
