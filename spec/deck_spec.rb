@@ -1,6 +1,4 @@
-require 'rspec'
 require './lib/deck'
-#require 'pry'; 
 
 RSpec.describe Deck do
 
@@ -50,37 +48,20 @@ RSpec.describe Deck do
   describe '#remove_card' do
     it 'will remove the top card from the deck' do
       removed = @deck.remove_card
+
       expect(@deck.cards).to eq([@card2, @card3])
       expect(removed).to eq(@card1)
     end
   end
 
-  it "does remove_card" do
-    card1 = Card.new(:diamond, 'Queen', 12)
-    card2 = Card.new(:spade, '3', 3)
-    card3 = Card.new(:heart, 'Ace', 14)
+  describe '#add_card' do
+    it 'will add a card from the bottom (last card in array) of the deck' do
+      expect(@deck.cards).to eq([@card1, @card2, @card3])
+      
+      @deck.add_card(@card4)
 
-    deck = Deck.new([card1, card2, card3])
-
-    expect(deck.cards).to eq([card1, card2, card3])
-
-    deck.remove_card
-
-    expect(deck.cards).to eq([card2, card3])
+      expect(@deck.cards).to eq([@card1, @card2, @card3, @card4])
+    end
   end
 
-  it "does add_card" do
-    card1 = Card.new(:diamond, 'Queen', 12)
-    card2 = Card.new(:spade, '3', 3)
-    card3 = Card.new(:heart, 'Ace', 14)
-    card4 = Card.new(:club, '5', 5)
-
-    deck = Deck.new([card1, card2, card3])
-
-    expect(deck.cards).to eq([card1, card2, card3])
-
-    deck.add_card(card4)
-
-    expect(deck.cards).to eq([card1, card2, card3, card4])
-  end
 end
