@@ -131,6 +131,8 @@ RSpec.describe Turn do
 
     turn = Turn.new(player1, player2)
 #binding.pry
+    expect(player1.deck.cards.length).to eq(4)
+    expect(player2.deck.cards.length).to eq(4)
     turn.player1
     turn.player2
     turn.spoils_of_war
@@ -139,8 +141,11 @@ RSpec.describe Turn do
     turn.pile_of_cards
     turn.spoils_of_war
     expect(turn.type).to eq(:basic)
-    expect(turn.winner).to eq(player)
-    expect(turn.award_spoils).to eq([])
+    expect(turn.winner).to eq(player2)
 
+    turn.award_spoils(player2)
+
+    expect(player1.deck.cards.length).to eq(3)
+    expect(player2.deck.cards.length).to eq(5)
   end
 end
