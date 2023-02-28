@@ -1,6 +1,10 @@
 ## War or Peace
 
-This is the starter repo for the BE Mod1 **War or Peace** project.
+This is the starter repo for the BE Mod1 **War or Peace** project at Turing School of Software and Design
+
+### Table of Contents
+
+### Install and Run Project
 
 
 ### What was your motivation?
@@ -17,6 +21,8 @@ This is the starter repo for the BE Mod1 **War or Peace** project.
 ### What did you learn?
   - About the benefits of helper methods to split up complex code, into manageable, testable pieces
   - About how the pry gem helps developers to get into the code to better understand errors
+
+
 
 ### Features
   - One or two-player game
