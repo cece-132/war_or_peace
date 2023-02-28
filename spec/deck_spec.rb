@@ -25,7 +25,7 @@ RSpec.describe Deck do
 
     describe 'relationships' do
       it 'has relationship to Card' do
-        @deck.cards each do |card|
+        @deck.cards.each do |card|
           expect(card).to be_a Card
         end
       end
