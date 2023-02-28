@@ -70,5 +70,16 @@ class Dealer
       @deck.cards[index] = y
     end
   end
+
+  def deal(player1, player2)
+    shuffle
+    @deck.cards.each_with_index do |card, index|
+      if index % 2 == 0 #% = modulus (gets the remainder)
+        player1.deck << card
+      else
+        player2.deck << card
+      end
+    end
+  end
   
 end

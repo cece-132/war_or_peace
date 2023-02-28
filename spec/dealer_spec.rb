@@ -29,25 +29,32 @@ RSpec.describe Dealer do
   end
 
   describe '#deal(player1, player2)' do
+
+    before :each do
+      @player1 = Player.new("Megan")
+      @player2 = Player.new("Aurora")
+
+      @dealer.deal(@player1, @player2)
+    end
     it 'deals two players an equal number of cards' do
-      expect(player1.deck.length).to eq 26
-      expect(player2.deck.length).to eq 26
-      expect(player1.deck).to_not eq player2.deck
+      expect(@player1.deck.length).to eq 26
+      expect(@player2.deck.length).to eq 26
+      expect(@player1.deck).to_not eq @player2.deck
     end
 
     it 'every card in each players deck is a Card' do
-      player1 = Player.new("Megan")
-      player2 = Player.new("Aurora")
-
-      @dealer.deal(player1, player2)
-
-      player1.deck.each do |card|
+      @player1.deck.each do |card|
         expect(card).to be_a Card
       end
 
-      player2.deck.each do |card|
+      @player2.deck.each do |card|
         expect(card).to be_a Card
       end
+    end
+
+    it 'cards are not repeated in the other players deck' do
+      expect(@player2.deck).to_not include(@player1.deck.first)
+      expect(@player1.deck).to_not include(@player2.deck.first)
     end
   end
 end
