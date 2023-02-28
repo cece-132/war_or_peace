@@ -5,7 +5,7 @@ This is the starter repo for the BE Mod1 **War or Peace** project at Turing Scho
 ### Table of Contents
 
 ### Install and Run Project
-
+  Built with: Ruby
 
 ### What was your motivation?
   - Create a game that a user can play war from the command line. 
