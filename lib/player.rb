@@ -1,6 +1,5 @@
 require './lib/deck'
-
-#require 'pry'
+require 'pry'
 
 class Player
 attr_reader :name, :deck
@@ -10,7 +9,6 @@ attr_reader :name, :deck
   end
 
   def has_lost?
-  #  
     if deck.cards.count == 0
       true
     else

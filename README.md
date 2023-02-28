@@ -52,7 +52,8 @@ This is the starter repo for the BE Mod1 **War or Peace** project at Turing Scho
 
 ### Testing
   - Coverage (PERCENTAGE)
-  - `
+  - RUN all Tests:`rspec spec`
+  - RUN a specific test `rspec spec/<test_file_name>.rb:<line of code>`
 
 ---
 
