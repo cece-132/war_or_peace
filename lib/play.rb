@@ -51,24 +51,49 @@ class Play
   end
 
   def war
-    until game_over?
+    until game_over? do
       turn = Turn.new(player1, player2)
-      if turn == :basic
-        binding.pry
-        "#{turn.winner.name.capitalize} won #{}"
-      elsif turn == :war
-      elsif turn == :mutually_assured_destruction
-      end
+      type = turn.type
       turn.pile_of_cards
       winner = turn.winner
       turn.pile_of_cards
       turn.award_spoils(winner)
-      puts "Turn #{turn_count}: #{turn.type}"
+
+      if type == :basic
+        puts "Turn#{@turn_count}: #{turn.winner.name.capitalize} won #{turn.award_spoils(turn.winner).count} cards"
+      elsif type == :mutually_assured_destruction
+        binding.pry
+        puts "Turn#{@turn_count}: *#{turn.type.to_s.gsub('_', ' ')}*  #{turn.award_spoils(turn.winner)} cards"
+      elsif type == :war
+        puts "Turn#{@turn_count}: #{turn.type.to_s.upcase} won #{turn.award_spoils(turn.winner).count} card"
+      end
+      
+      @turn_count += 1
+
+      # if turn.type == :basic
+      #   turn.pile_of_cards
+      #   turn.award_spoils(turn.winner)
+      #   puts "#{turn.winner.name.capitalize} won #{turn.award_spoils(turn.winner).count} cards"
+      # elsif turn.type == :war
+      #   turn.pile_of_cards
+      #   turn.award_spoils(turn.winner)
+      #   puts "#{turn.type.to_s.upcase} - won #{turn.award_spoils(turn.winner).count} cards"
+      # elsif turn.type == :mutually_assured_destruction
+      #   turn.pile_of_cards
+      #   turn.award_spoils(turn.winner)
+      #   puts "*#{turn.type.to_s.gsub('_', ' ')}* - #{turn.award_spoils(turn.winner)}"
+      # end
     end
+
+    if @player1.has_lost?
+      puts "*~*~*~* #{@player2.name} Won *~*~*~*"
+    elsif @player2.has_lost?
+      puts "*~*~*~* #{@player1.name} Won *~*~*~*"
+    end
+
   end
 
   def game_over?
-    binding.pry
     turn_count == 1_000_000 || @player1.has_lost? || @player2.has_lost?
   end
 

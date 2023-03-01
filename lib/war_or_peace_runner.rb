@@ -90,35 +90,35 @@ play.welcome_message
 # puts "Type 'GO' to start the game!"
 # puts "------------------------------------------------------------------"
 
-turns = 1
+# turns = 1
 
- while turns < 1000001
+#  while turns < 1000001
 
-  if player1.deck.cards.length == 52
-    puts "*~*~*~* #{player1.name} Won *~*~*~*"
-    break
-  elsif player2.deck.cards.length == 52
-    puts "*~*~*~* #{player2.name} Won *~*~*~*"
-    break
-  else # play game
+#   if player1.deck.cards.length == 52
+#     puts "*~*~*~* #{player1.name} Won *~*~*~*"
+#     break
+#   elsif player2.deck.cards.length == 52
+#     puts "*~*~*~* #{player2.name} Won *~*~*~*"
+#     break
+#   else # play game
 
 
-  turn = Turn.new(player1, player2)
-  type = turn.type
-  turn.pile_of_cards
-  winner = turn.winner
-  turn.pile_of_cards
-  turn.award_spoils(winner)
+#   turn = Turn.new(player1, player2)
+#   type = turn.type
+#   turn.pile_of_cards
+#   winner = turn.winner
+#   turn.pile_of_cards
+#   turn.award_spoils(winner)
 
-  if type == :basic
-    puts "Turn#{turns}: #{winner.name} won 2 cards"
-  elsif type == :mutually_assured_destruction
-    puts "Turn#{turns}: *mutually assured destruction* 6 cards removed from play"
-  else
+#   if type == :basic
+#     puts "Turn#{turns}: #{winner.name} won 2 cards"
+#   elsif type == :mutually_assured_destruction
+#     puts "Turn#{turns}: *mutually assured destruction* 6 cards removed from play"
+#   else
 
-    puts "Turn#{turns}: #{winner.name} won 6 cards"
-  end
+#     puts "Turn#{turns}: #{winner.name} won 6 cards"
+#   end
 
-  turns += 1
-  end
- end
+#   turns += 1
+#   end
+#  end
