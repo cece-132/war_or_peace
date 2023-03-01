@@ -75,9 +75,9 @@ class Dealer
     shuffle
     @deck.cards.each_with_index do |card, index|
       if index % 2 == 0 #% = modulus (gets the remainder)
-        player1.deck << card
+        player1.deck.cards << card
       else
-        player2.deck << card
+        player2.deck.cards << card
       end
     end
   end
