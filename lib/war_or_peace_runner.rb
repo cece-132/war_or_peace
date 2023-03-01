@@ -1,4 +1,4 @@
-require './lib/turn'
+require './lib/play'
 
 # dealer_deck = Deck.new([
 #   Card.new(:heart, '2', 2),
@@ -79,13 +79,16 @@ require './lib/turn'
 #   end
 # end
 
-puts "Welcome to War! (or Peace) This game will be played with 52 cards."
-puts "The players today are Megan and Aurora."
-puts "Type 'GO' to start the game!"
-puts "------------------------------------------------------------------"
+play = Play.new
 
-player1 = Player.new("Megan", deck1)
-player2 = Player.new("Aurora", deck2)
+play.welcome_message
+# puts "Welcome to War! (or Peace) This game will be played with 52 cards."
+# puts "Are there 1 or 2 players? (Enter 1 or 2)"
+
+
+# puts "The players today are #{play.player1.name} and #{play.player2.name}"
+# puts "Type 'GO' to start the game!"
+# puts "------------------------------------------------------------------"
 
 turns = 1
 
