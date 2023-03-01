@@ -1,6 +1,6 @@
 ## War or Peace
 
-This is the starter repo for the BE Mod1 **War or Peace** project at Turing School of Software and Design
+This is the starter repo for the BE Mod1 **War or Peace** project at [Turing School of Software and Design](https://backend.turing.edu/module1/projects/war_or_peace/index). 
 
 ### Table of Contents
 
