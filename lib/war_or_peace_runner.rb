@@ -80,7 +80,6 @@ require './lib/play'
 # end
 
 play = Play.new
-
 play.welcome_message
 # puts "Welcome to War! (or Peace) This game will be played with 52 cards."
 # puts "Are there 1 or 2 players? (Enter 1 or 2)"
@@ -122,3 +121,50 @@ play.welcome_message
 #   turns += 1
 #   end
 #  end
+
+
+# ------
+
+      # if turn.type == :basic
+      #   turn.pile_of_cards
+      #   turn.award_spoils(turn.winner)
+      #   puts "#{turn.winner.name.capitalize} won #{turn.award_spoils(turn.winner).count} cards"
+      # elsif turn.type == :war
+      #   turn.pile_of_cards
+      #   turn.award_spoils(turn.winner)
+      #   puts "#{turn.type.to_s.upcase} - won #{turn.award_spoils(turn.winner).count} cards"
+      # elsif turn.type == :mutually_assured_destruction
+      #   turn.pile_of_cards
+      #   turn.award_spoils(turn.winner)
+      #   puts "*#{turn.type.to_s.gsub('_', ' ')}* - #{turn.award_spoils(turn.winner)}"
+      # end
+
+## -------
+
+#  if @player1.has_lost?
+#         puts "*~*~*~* #{@player2.name} Won *~*~*~*"
+#         break
+#       elsif @player2.has_lost?
+#         puts "*~*~*~* #{@player1.name} Won *~*~*~*"
+#         break
+#       elsif @turn_count == 1000000
+#         puts "DRAW GAME OVER"
+#         break
+#       else
+#         turn = Turn.new(player1, player2)
+#         type = turn.type
+#         turn.pile_of_cards
+#         winner = turn.winner
+#         turn.pile_of_cards
+#         turn.award_spoils(winner)
+
+#         if turn == :mutually_assured_destruction
+#           puts "Turn#{@turn_count}: *#{type.to_s.gsub('_', ' ')}*  #{type.no_winner_count} cards"
+#         elsif turn == :war
+#           puts "Turn#{@turn_count}: #{type.to_s.upcase} won #{turn.award_spoils(winner).length} card"
+#         elsif turn == :basic
+#           puts "Turn#{@turn_count}: #{winner.name.capitalize} won #{turn.award_spoils(winner).length} cards"
+#         end
+        
+#         @turn_count += 1
+#       end

@@ -15,7 +15,7 @@ class Turn
       :basic
     elsif player1.deck.rank_of_card_at(0) == player2.deck.rank_of_card_at(0) && player1.deck.rank_of_card_at(2) == player2.deck.rank_of_card_at(2)
       :mutually_assured_destruction
-    else #player1.deck.rank_of_card_at(0) == player2.deck.rank_of_card_at(0)
+    elsif player1.deck.rank_of_card_at(0) == player2.deck.rank_of_card_at(0)
       :war
     end
   end
@@ -49,7 +49,6 @@ class Turn
         spoils_of_war << player2.deck.remove_card
       end
       @no_winner_count = spoils_of_war.uniq.count
-      binding.pry
       spoils_of_war.clear
     else type == :war
       3.times do

@@ -1,4 +1,5 @@
 require './lib/deck'
+require './lib/play'
 require 'pry'
 
 class Player
