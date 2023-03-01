@@ -68,6 +68,7 @@ class Play
   end
 
   def game_over?
+    binding.pry
     turn_count == 1_000_000 || @player1.has_lost? || @player2.has_lost?
   end
 

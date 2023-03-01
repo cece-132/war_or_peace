@@ -15,8 +15,8 @@ RSpec.describe Turn do
       @card6 = Card.new(:diamond, 'Queen', 12)
       @card7 = Card.new(:heart, '3', 3)
   
-      @deck1 = Deck.new([@card1, @card2, @card5, @card8])
-      @deck2 = Deck.new([@card3, @card4, @card6, @card7])
+      @deck1 = [@card1, @card2, @card5, @card8]
+      @deck2 = [@card3, @card4, @card6, @card7]
   
       @player1 = Player.new("Megan", @deck1)
       @player2 = Player.new("Aurora", @deck2)
@@ -47,8 +47,8 @@ RSpec.describe Turn do
       card6 = Card.new(:diamond, 'Queen', 12)
       card7 = Card.new(:heart, '3', 3)
   
-      deck1 = Deck.new([card1, card2, card5, card8])
-      deck2 = Deck.new([card3, card4, card6, card7])
+      deck1 = [card1, card2, card5, card8]
+      deck2 = [card3, card4, card6, card7]
   
       player1 = Player.new("Megan", deck1)
       player2 = Player.new("Aurora", deck2)
@@ -68,8 +68,8 @@ RSpec.describe Turn do
       card7 = Card.new(:heart, '3', 3)
       card8 = Card.new(:diamond, '2', 2)
 
-      deck1 = Deck.new([card1, card2, card5, card8])
-      deck2 = Deck.new([card4, card3, card6, card7])
+      deck1 = [card1, card2, card5, card8]
+      deck2 = [card4, card3, card6, card7]
 
       player1 = Player.new("Megan", deck1)
       player2 = Player.new("Aurora", deck2)
@@ -88,8 +88,8 @@ RSpec.describe Turn do
       card7 = Card.new(:heart, '3', 3)
       card8 = Card.new(:diamond, '2', 2)
 
-      deck1 = Deck.new([card1, card2, card5, card8])
-      deck2 = Deck.new([card4, card3, card6, card7])
+      deck1 = [card1, card2, card5, card8]
+      deck2 = [card4, card3, card6, card7]
 
       player1 = Player.new("Megan", deck1)
       player2 = Player.new("Aurora", deck2)
@@ -113,8 +113,8 @@ RSpec.describe Turn do
         card6 = Card.new(:diamond, 'Queen', 12)
         card7 = Card.new(:heart, '3', 3)
   
-        deck1 = Deck.new([card1, card2, card5, card8])
-        deck2 = Deck.new([card4, card3, card6, card7])
+        deck1 = [card1, card2, card5, card8]
+        deck2 = [card4, card3, card6, card7]
   
         player1 = Player.new("Megan", deck1)
         player2 = Player.new("Aurora", deck2)
@@ -138,8 +138,8 @@ RSpec.describe Turn do
         card6 = Card.new(:diamond, 'Queen', 12)
         card7 = Card.new(:heart, '3', 3)
   
-        deck1 = Deck.new([card1, card2, card5, card8])
-        deck2 = Deck.new([card4, card3, card6, card7])
+        deck1 = [card1, card2, card5, card8]
+        deck2 = [card4, card3, card6, card7]
   
         player1 = Player.new("Megan", deck1)
         player2 = Player.new("Aurora", deck2)
@@ -162,8 +162,8 @@ RSpec.describe Turn do
         card7 = Card.new(:heart, '3', 3)
         card8 = Card.new(:diamond, '2', 2)
   
-        deck1 = Deck.new([card1, card2, card5, card8])
-        deck2 = Deck.new([card4, card3, card6, card7])
+        deck1 = [card1, card2, card5, card8]
+        deck2 = [card4, card3, card6, card7]
   
         player1 = Player.new("Megan", deck1)
         player2 = Player.new("Aurora", deck2)
@@ -188,8 +188,8 @@ RSpec.describe Turn do
         card6 = Card.new(:diamond, 'Queen', 12)
         card7 = Card.new(:heart, '3', 3)
 
-        deck1 = Deck.new([card1, card2, card5, card8])
-        deck2 = Deck.new([card4, card3, card6, card7])
+        deck1 = [card1, card2, card5, card8]
+        deck2 = [card4, card3, card6, card7]
 
         player1 = Player.new("Megan", deck1)
         player2 = Player.new("Aurora", deck2)
@@ -218,8 +218,8 @@ RSpec.describe Turn do
         card6 = Card.new(:diamond, 'Queen', 12)
         card7 = Card.new(:heart, '3', 3)
 
-        deck1 = Deck.new([card1, card2, card5, card8])
-        deck2 = Deck.new([card4, card3, card6, card7])
+        deck1 = [card1, card2, card5, card8]
+        deck2 = [card4, card3, card6, card7]
 
         player1 = Player.new("Megan", deck1)
         player2 = Player.new("Aurora", deck2)
@@ -247,8 +247,8 @@ RSpec.describe Turn do
         card7 = Card.new(:heart, '3', 3)
         card8 = Card.new(:diamond, '2', 2)
 
-        deck1 = Deck.new([card1, card2, card5, card8])
-        deck2 = Deck.new([card4, card3, card6, card7])
+        deck1 = [card1, card2, card5, card8]
+        deck2 = [card4, card3, card6, card7]
 
         player1 = Player.new("Megan", deck1)
         player2 = Player.new("Aurora", deck2)
@@ -278,8 +278,8 @@ RSpec.describe Turn do
       card6 = Card.new(:diamond, 'Queen', 12)
       card7 = Card.new(:heart, '3', 3)
 
-      deck1 = Deck.new([card1, card2, card5, card8])
-      deck2 = Deck.new([card4, card3, card6, card7])
+      deck1 = [card1, card2, card5, card8]
+      deck2 = [card4, card3, card6, card7]
 
       player1 = Player.new("Megan", deck1)
       player2 = Player.new("Aurora", deck2)

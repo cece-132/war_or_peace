@@ -1,4 +1,5 @@
 require './lib/player'
+require 'pry'
 
 RSpec.describe Player do
 
@@ -7,7 +8,7 @@ RSpec.describe Player do
     @card2 = Card.new(:spade, '3', 3)
     @card3 = Card.new(:heart, 'Ace', 14)
 
-    @deck = Deck.new([@card1, @card2, @card3])
+    @deck = [@card1, @card2, @card3]
 
     @player = Player.new('Clarisa', @deck)
   end
@@ -19,7 +20,7 @@ RSpec.describe Player do
 
     it 'has attributes' do
       expect(@player.name).to eq("Clarisa")
-      expect(@player.deck).to eq(@deck)
+      expect(@player.deck.cards).to eq [@card1, @card2, @card3]
     end
 
     describe 'relationships' do
