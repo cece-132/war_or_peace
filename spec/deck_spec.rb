@@ -1,81 +1,75 @@
-require 'rspec'
 require './lib/deck'
-#require 'pry'; binding.pry
 
 RSpec.describe Deck do
-  it "exists" do
-    deck = Deck.new(@cards)
-  #card = Card.new(:diamond, 'Queen', 12)
-    expect(deck).to be_an_instance_of(Deck)
+
+  before :each do
+    @card1 = Card.new(:diamond, 'Queen', 12)
+    @card2 = Card.new(:spade, '3', 3)
+    @card3 = Card.new(:heart, 'Ace', 14)
+    @card4 = Card.new(:club, '5', 5)
+
+    @cards = [@card1, @card2, @card3]
+
+    @deck = Deck.new(@cards)
   end
 
-  it "has cards" do
-    card1 = Card.new(:diamond, 'Queen', 12)
-    card2 = Card.new(:spade, '3', 3)
-    card3 = Card.new(:heart, 'Ace', 14)
+  describe '#initialize(cards)' do
+    it "exists" do
+      expect(@deck).to be_an_instance_of(Deck)
+    end
 
-    deck = Deck.new([card1, card2, card3])
+    it 'has attributes' do
+      expect(@deck.cards).to be_a Array
+      expect(@deck.cards.length).to eq(3)
+    end
 
-    expect(deck.cards).to eq([card1, card2, card3])
+    describe 'relationships' do
+      it 'has relationship to Card' do
+        @deck.cards.each do |card|
+          expect(card).to be_a Card
+        end
+      end
+    end
   end
 
-  it "has rank_of_card_at" do
-    card1 = Card.new(:diamond, 'Queen', 12)
-    card2 = Card.new(:spade, '3', 3)
-    card3 = Card.new(:heart, 'Ace', 14)
-
-    deck = Deck.new([card1, card2, card3])
-
-    expect(deck.rank_of_card_at(0)).to eq(12)
-    expect(deck.rank_of_card_at(2)).to eq(14)
+  describe '#rank_of_card_at(index)' do
+    it 'returns the rank of card at index' do
+      expect(@deck.rank_of_card_at(0)).to eq(12)
+      expect(@deck.rank_of_card_at(2)).to eq(14)
+    end
   end
 
-  it "has high_ranking_cards" do
-    card1 = Card.new(:diamond, 'Queen', 12)
-    card2 = Card.new(:spade, '3', 3)
-    card3 = Card.new(:heart, 'Ace', 14)
-
-    deck = Deck.new([card1, card2, card3])
-
-    expect(deck.high_ranking_cards).to eq([card1, card3])
+  describe '#high_ranking_cards' do
+    it 'returns cards in deck that rank 11 or higher' do
+      expect(@deck.high_ranking_cards).to eq([@card1, @card3])
+      expect(@deck.high_ranking_cards).to_not include(@card2)
+      expect(@deck.high_ranking_cards).to_not include(@card4)
+    end
   end
 
-  it "has percent_high_ranking" do
-    card1 = Card.new(:diamond, 'Queen', 12)
-    card2 = Card.new(:spade, '3', 3)
-    card3 = Card.new(:heart, 'Ace', 14)
-
-    deck = Deck.new([card1, card2, card3])
-
-    expect(deck.percent_high_ranking).to eq(66.67)
+  describe '#percent_high_ranking' do 
+    it 'return the percentage of cards that are high ranking' do
+      expect(@deck.percent_high_ranking).to eq(66.67)
+    end
   end
 
-  it "does remove_card" do
-    card1 = Card.new(:diamond, 'Queen', 12)
-    card2 = Card.new(:spade, '3', 3)
-    card3 = Card.new(:heart, 'Ace', 14)
+  describe '#remove_card' do
+    it 'will remove the top card from the deck' do
+      removed = @deck.remove_card
 
-    deck = Deck.new([card1, card2, card3])
-
-    expect(deck.cards).to eq([card1, card2, card3])
-
-    deck.remove_card
-
-    expect(deck.cards).to eq([card2, card3])
+      expect(@deck.cards).to eq([@card2, @card3])
+      expect(removed).to eq(@card1)
+    end
   end
 
-  it "does add_card" do
-    card1 = Card.new(:diamond, 'Queen', 12)
-    card2 = Card.new(:spade, '3', 3)
-    card3 = Card.new(:heart, 'Ace', 14)
-    card4 = Card.new(:club, '5', 5)
+  describe '#add_card' do
+    it 'will add a card from the bottom (last card in array) of the deck' do
+      expect(@deck.cards).to eq([@card1, @card2, @card3])
+      
+      @deck.add_card(@card4)
 
-    deck = Deck.new([card1, card2, card3])
-
-    expect(deck.cards).to eq([card1, card2, card3])
-
-    deck.add_card(card4)
-
-    expect(deck.cards).to eq([card1, card2, card3, card4])
+      expect(@deck.cards).to eq([@card1, @card2, @card3, @card4])
+    end
   end
+
 end

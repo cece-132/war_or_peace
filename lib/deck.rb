@@ -1,6 +1,5 @@
 require './lib/card'
 
-
 class Deck
   attr_reader :cards
 
@@ -9,7 +8,12 @@ class Deck
   end
 
   def rank_of_card_at(index)
-    cards[index].rank
+    if cards[index].nil?
+      binding.pry
+    else
+      cards[index].rank
+    end
+
   end
 
   def high_ranking_cards
@@ -23,8 +27,7 @@ class Deck
   end
 
   def percent_high_ranking
-    decimal = (high_ranking_cards.count.to_f / @cards.count)
-    percentage = (decimal * 100).round(2)
+    ((high_ranking_cards.count.to_f / @cards.count)* 100).round(2)
   end
 
   def remove_card
