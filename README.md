@@ -55,8 +55,8 @@ This is the starter repo for the BE Mod1 **War or Peace** project at [Turing Sch
   - Deck: has an array of cards
   - Player: has a name, and a Deck object
   - Turn: has two players, spoils of war array, and a no_winner_count
-  - Dealer:
-  - Play:
+  - Dealer: has a deck instance with an array of card objects
+  - Play: has two players and a turn counter
 
 ---
 
