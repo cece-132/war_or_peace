@@ -1,5 +1,4 @@
 require './lib/dealer'
-require 'pry'
 
 RSpec.describe Dealer do
 

@@ -1,6 +1,5 @@
 require './lib/deck'
 require './lib/play'
-require 'pry'
 
 class Player
 attr_reader :name, :deck

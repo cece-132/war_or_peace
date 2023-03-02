@@ -50,6 +50,16 @@ This is the starter repo for the BE Mod1 **War or Peace** project at [Turing Sch
 
 ---
 
+### Classes
+  - Card: has a Rank, Value, and Suit
+  - Deck: has an array of cards
+  - Player: has a name, and a Deck object
+  - Turn: has two players, spoils of war array, and a no_winner_count
+  - Dealer:
+  - Play:
+
+---
+
 ### Testing
   - Coverage (PERCENTAGE)
   - RUN all Tests:`rspec spec`

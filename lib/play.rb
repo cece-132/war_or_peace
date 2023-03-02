@@ -1,6 +1,5 @@
 require './lib/turn'
 require './lib/dealer'
-require 'pry'
 
 class Play
   attr_reader :player1, :player2, :turn_count

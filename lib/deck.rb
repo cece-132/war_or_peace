@@ -8,12 +8,7 @@ class Deck
   end
 
   def rank_of_card_at(index)
-    if cards[index].nil?
-      binding.pry
-    else
       cards[index].rank
-    end
-
   end
 
   def high_ranking_cards
