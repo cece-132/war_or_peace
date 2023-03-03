@@ -1,6 +1,5 @@
 require './lib/turn'
 require './lib/dealer'
-require 'pry'
 
 class Play
   attr_reader :player1, :player2, :turn_count
@@ -63,9 +62,9 @@ class Play
       if type == :basic
         puts "Turn#{@turn_count}: #{turn.winner.name.capitalize} won 2 cards"
       elsif type == :mutually_assured_destruction
-        puts "Turn#{@turn_count}: *#{turn.type.to_s.gsub('_', ' ')}* 6 cards"
+        puts "Turn#{@turn_count}: * mutually assured destruction * 6 cards removed from play"
       elsif type == :war
-        puts "Turn#{@turn_count}: #{turn.type.to_s.upcase} won 6 cards"
+        puts "Turn#{@turn_count}: WAR - #{turn.winner.name.capitalize} won 6 cards"
       end
       @turn_count += 1
     end

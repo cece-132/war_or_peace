@@ -1,5 +1,4 @@
 require './lib/play'
-require 'pry'
 
 RSpec.describe Play do
 
